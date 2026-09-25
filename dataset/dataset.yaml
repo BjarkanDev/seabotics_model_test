@@ -1,0 +1,11 @@
+path: ./dataset
+
+train: images/train
+val: images/val
+
+nc: 3
+
+names:
+  0: red_buoy
+  1: yellow_buoy
+  2: green_buoy
