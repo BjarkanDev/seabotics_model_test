@@ -1,6 +1,6 @@
 import depthai as dai
 
-model = dai.NNArchive("YOLOv26n_test2_model.rvc2.tar.xz")
+model = dai.NNArchive("YOLO26n_buoy_detector.rvc2.tar.xz")
 # Alternatively, use your converted local artifact:
 # model = dai.NNArchive("path/to/model.rvc4.tar.xz")
 

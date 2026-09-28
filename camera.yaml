@@ -1,0 +1,27 @@
+/oak:
+  ros__parameters:
+    camera:
+      i_pipeline_type: "RGB"         # Standard 2D flow (ignores depth)
+      i_nn_type: "rgb"               # Tells driver NN acts on the RGB stream
+      i_mx_id: ""
+      i_enable_imu: false            # Saves bandwidth
+      i_enable_ir: true              # Turns on OAK-D Pro IR illuminators
+
+    rgb:
+      i_resolution: "1080P"
+      i_fps: 30.0
+      i_enable_line_encoding: true   # Forces H.264/H.265/MJPEG compression on-device
+      i_low_bandwidth: true          # Streams compressed image types natively
+      
+      # Match the YOLOv26n network dimensions:
+      i_preview_size: 416            # Required for correct coordinate scaling
+      i_preview_width: 416
+      i_preview_height: 416
+
+    nn:
+      i_nn_config_path: "YOLO26n_buoy_detector.tar.xz"
+      i_nn_family: "YOLO"            # Set to YOLO to invoke the driver's native YOLO decoder parser
+      i_disable_resize: false        # MUST BE FALSE so the driver scales the image down to 416x416 for the NN
+      i_nn_confidence_threshold: 0.5
+      i_enable_passthrough: true     
+

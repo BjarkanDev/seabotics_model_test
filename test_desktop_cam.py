@@ -1,7 +1,7 @@
 import cv2
 from ultralytics import YOLO
 
-model = YOLO("best.pt")
+model = YOLO("YOLO26n_buoy_detector.pt")
 cap = cv2.VideoCapture(0)
 
 if not cap. isOpened():
@@ -10,7 +10,7 @@ if not cap. isOpened():
 
 frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
 frame_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
-fps = 24.0
+fps = 30.0
 
 while True:
     ret, frame = cap.read()
@@ -28,5 +28,4 @@ while True:
 
 # 5. Release resources and close windows
 cap.release()
-out.release()
 cv2.destroyAllWindows()
