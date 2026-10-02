@@ -24,3 +24,4 @@
       i_nn_family: detection
       i_enable_passthrough: true
       i_enable_passthrough_depth: false
+      i_nn_model: YOLO26n_buoy_detector.rvc2.tar.xz
